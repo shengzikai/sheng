@@ -70,7 +70,10 @@ def find_gradient_end_time(gradient_signal, t):
 st.set_page_config(layout="wide", page_title="网页版涡流信号分析工具")
 
 # 设置matplotlib字体以支持中文
-plt.rcParams['font.sans-serif'] = ['STHeiti']
+# 注意：'WenQuanYi Zen Hei' 是我们通过 packages.txt 在 Streamlit Cloud 上安装的字体。
+# 在本地Mac上运行时，如果未安装此字体，中文可能同样显示为方框。
+# 为了在服务器和本地都能良好显示，您可以在本地也安装"文泉驿正黑"字体。
+plt.rcParams['font.sans-serif'] = ['WenQuanYi Zen Hei']
 plt.rcParams['axes.unicode_minus'] = False
 
 st.title("高级涡流信号分析工具 (网页版)")
